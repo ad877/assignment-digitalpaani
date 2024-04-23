@@ -1,0 +1,22 @@
+{
+  "name": "digitalpaani-book-management-assignment",
+  "version": "1.0.0",
+  "description": "a small poc on book management with crud operations using graphql",
+  "main": "lib/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "cross-env node --inspect --require dotenv src/app.js"
+  },
+  "author": "Arpit Dhunna",
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/server": "^4.4.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "graphql": "^16.6.0",
+    "helmet": "^6.1.5",
+    "mongoose": "^8.3.2",
+    "nexus": "^1.3.0"
+  }
+}
