@@ -19,14 +19,6 @@ addDefaultGraphqlAPI(app);
 
 const port = process.env.PORT_BOOK_MANAGEMENT || 3000;
 
-app
-  .listen(port, () => {
-    console.log('Book-Management started up on port %d!', port);
-  })
-  .catch((error) => {
-    console.error('Error starting up server', error);
-  });
-
 mongoose
   .connect(process.env.DATABASE_URL)
   .then(() => {

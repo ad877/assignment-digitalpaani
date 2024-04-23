@@ -1,6 +1,6 @@
 import { objectType } from 'nexus';
 
-const user = objectType({
+export const user = objectType({
   name: 'User',
   definition(t) {
     t.string('_id');

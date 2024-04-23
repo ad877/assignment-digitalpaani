@@ -1,4 +1,4 @@
-import { extendType } from 'nexus';
+import { extendType, stringArg } from 'nexus';
 
 export const getBooks = extendType({
   type: 'Query',

@@ -6,7 +6,7 @@ export const addBooksInput = inputObjectType({
     t.nonNull.string('title');
     t.nonNull.string('author');
     t.nonNull.string('isbn');
-    t.nonNull.date('publicationDate');
+    t.nonNull.string('publicationDate');
     t.nonNull.int('numberOfPages');
   },
 });
@@ -16,10 +16,12 @@ export const addBooks = extendType({
   definition(t) {
     t.list.field('addBooks', {
       type: 'Book',
-      args: list('addBooksInput'),
+      args: {
+        input: list(addBooksInput),
+      },
       resolve: async (_, args, ctx) => {
         try {
-          return await ctx.mongoose.Book.insertMany(args.addBooksInput);
+          return await ctx.mongoose.Book.insertMany(args.input.addBooksInput);
         } catch (error) {
           console.log(error);
         }
