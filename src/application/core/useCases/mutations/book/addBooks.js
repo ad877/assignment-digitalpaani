@@ -6,7 +6,9 @@ export const addBooksInput = inputObjectType({
     t.nonNull.string('title');
     t.nonNull.string('author');
     t.nonNull.string('isbn');
-    t.nonNull.string('publicationDate');
+    t.nonNull.field('publicationDate',{
+      type: 'PastDateTime',
+    });
     t.nonNull.int('numberOfPages');
   },
 });

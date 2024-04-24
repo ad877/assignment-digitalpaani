@@ -1,4 +1,25 @@
-import { extendType, stringArg } from 'nexus';
+import { extendType, stringArg, arg} from 'nexus';
+import { scalarType } from 'nexus';
+import { DateTimeResolver } from 'graphql-scalars';
+
+export const PastDateTime = scalarType({
+  ...DateTimeResolver,
+  name: 'PastDateTime',
+  parseValue(value) {
+    const dateValue = new Date(value);
+    if (dateValue > new Date()) {
+      throw new Error('Date cannot be in the future');
+    }
+    return dateValue;
+  },
+  parseLiteral(ast) {
+    const dateValue = new Date(ast.value);
+    if (dateValue > new Date()) {
+      throw new Error('Date cannot be in the future');
+    }
+    return dateValue;
+  },
+});
 
 export const getBooks = extendType({
   type: 'Query',
@@ -9,7 +30,7 @@ export const getBooks = extendType({
         title: stringArg(),
         author: stringArg(),
         isbn: stringArg(),
-        publicationDate: stringArg(),
+        publicationDate: arg({ type: PastDateTime }),
       },
       resolve: async (_, args, ctx) => {
         try {
