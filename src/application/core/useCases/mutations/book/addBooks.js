@@ -21,7 +21,7 @@ export const addBooks = extendType({
       },
       resolve: async (_, args, ctx) => {
         try {
-          return await ctx.mongoose.Book.insertMany(args.input.addBooksInput);
+          return await ctx.mongoose.Book.insertMany(args.input);
         } catch (error) {
           console.log(error);
         }
