@@ -5,7 +5,6 @@ const { json } = pkg;
 import cors from 'cors';
 import schema from './schema.js';
 import context from './context.js';
-import { verifyJWTToken } from '../utils/index.js';
 
 export default async (app) => {
   const server = new ApolloServer({
@@ -15,17 +14,7 @@ export default async (app) => {
     persistedQueries: false,
   });
 
-  const path = process.env.DEFAULT_GRAPHQL_PATH || '/graphql';
-
-  app.use(path, async (req, res, next) => {
-    const verifyLogin = verifyJWTToken(req.headers['authorization']);
-
-    if (verifyLogin.valid) {
-      return next();
-    }
-
-    res.sendStatus(401);
-  });
+  const path = process.env.ALLOWED_GRAPHQL_PATH || '/public';
   await server.start();
 
   app.use(

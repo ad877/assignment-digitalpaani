@@ -2,14 +2,14 @@ import { nonNull, objectType, stringArg } from 'nexus';
 import bcrypt from 'bcrypt';
 import { generateJWTToken } from '../../../../utils/index.js';
 
-export const aAuthPayload = objectType({
+export const authPayload = objectType({
   name: 'authPayload',
   definition(t) {
     t.string('token');
   },
 });
 
-export const Mutation = objectType({
+export const authenticate = objectType({
   name: 'Mutation',
   definition(t) {
     t.field('login', {

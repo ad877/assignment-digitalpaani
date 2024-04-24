@@ -12,10 +12,7 @@ type Book {
 }
 
 type Mutation {
-  addBooks(input: [addBooksInput]): [Book]
-  deleteBook(isbn: String, title: String): Book
   login(email: String!, password: String!): authPayload
-  updateBook(author: String, isbn: String!, numberOfPages: Int, publicationDate: String, title: String): Book
   userSignUp(email: String!, name: String!, password: String!): UserSignUpResponse
 }
 
@@ -23,23 +20,9 @@ type Query {
   getBooks(author: String, isbn: String, publicationDate: String, title: String): [Book]
 }
 
-type User {
-  _id: String
-  name: String
-  password: String
-}
-
 type UserSignUpResponse {
   message: String
   success: Boolean
-}
-
-input addBooksInput {
-  author: String!
-  isbn: String!
-  numberOfPages: Int!
-  publicationDate: String!
-  title: String!
 }
 
 type authPayload {

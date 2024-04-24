@@ -3,6 +3,7 @@ import helmet from 'helmet';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import addDefaultGraphqlAPI from './application/server/index.js';
+import addAllowedGraphqlAPI from './application/server/allowed/index.js';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ if (process.env.NODE_ENV == 'production') {
 }
 
 addDefaultGraphqlAPI(app);
+addAllowedGraphqlAPI(app);
 
 const port = process.env.PORT_BOOK_MANAGEMENT || 3000;
 

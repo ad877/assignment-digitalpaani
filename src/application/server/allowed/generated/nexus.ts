@@ -14,13 +14,6 @@ declare global {
 }
 
 export interface NexusGenInputs {
-  addBooksInput: { // input type
-    author: string; // String!
-    isbn: string; // String!
-    numberOfPages: number; // Int!
-    publicationDate: string; // String!
-    title: string; // String!
-  }
 }
 
 export interface NexusGenEnums {
@@ -45,11 +38,6 @@ export interface NexusGenObjects {
   }
   Mutation: {};
   Query: {};
-  User: { // root type
-    _id?: string | null; // String
-    name?: string | null; // String
-    password?: string | null; // String
-  }
   UserSignUpResponse: { // root type
     message?: string | null; // String
     success?: boolean | null; // Boolean
@@ -79,19 +67,11 @@ export interface NexusGenFieldTypes {
     title: string | null; // String
   }
   Mutation: { // field return type
-    addBooks: Array<NexusGenRootTypes['Book'] | null> | null; // [Book]
-    deleteBook: NexusGenRootTypes['Book'] | null; // Book
     login: NexusGenRootTypes['authPayload'] | null; // authPayload
-    updateBook: NexusGenRootTypes['Book'] | null; // Book
     userSignUp: NexusGenRootTypes['UserSignUpResponse'] | null; // UserSignUpResponse
   }
   Query: { // field return type
     getBooks: Array<NexusGenRootTypes['Book'] | null> | null; // [Book]
-  }
-  User: { // field return type
-    _id: string | null; // String
-    name: string | null; // String
-    password: string | null; // String
   }
   UserSignUpResponse: { // field return type
     message: string | null; // String
@@ -112,19 +92,11 @@ export interface NexusGenFieldTypeNames {
     title: 'String'
   }
   Mutation: { // field return type name
-    addBooks: 'Book'
-    deleteBook: 'Book'
     login: 'authPayload'
-    updateBook: 'Book'
     userSignUp: 'UserSignUpResponse'
   }
   Query: { // field return type name
     getBooks: 'Book'
-  }
-  User: { // field return type name
-    _id: 'String'
-    name: 'String'
-    password: 'String'
   }
   UserSignUpResponse: { // field return type name
     message: 'String'
@@ -137,23 +109,9 @@ export interface NexusGenFieldTypeNames {
 
 export interface NexusGenArgTypes {
   Mutation: {
-    addBooks: { // args
-      input?: Array<NexusGenInputs['addBooksInput'] | null> | null; // [addBooksInput]
-    }
-    deleteBook: { // args
-      isbn?: string | null; // String
-      title?: string | null; // String
-    }
     login: { // args
       email: string; // String!
       password: string; // String!
-    }
-    updateBook: { // args
-      author?: string | null; // String
-      isbn: string; // String!
-      numberOfPages?: number | null; // Int
-      publicationDate?: string | null; // String
-      title?: string | null; // String
     }
     userSignUp: { // args
       email: string; // String!
@@ -179,7 +137,7 @@ export interface NexusGenTypeInterfaces {
 
 export type NexusGenObjectNames = keyof NexusGenObjects;
 
-export type NexusGenInputNames = keyof NexusGenInputs;
+export type NexusGenInputNames = never;
 
 export type NexusGenEnumNames = never;
 
