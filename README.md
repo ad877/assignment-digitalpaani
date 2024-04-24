@@ -66,11 +66,11 @@ endpoints : <br>
 
 ### Mutations
 
-1.addBooks : Adds new books. It takes an array of addBooksInput and returns an array of the added books.
-2.deleteBook : Deletes a book based on the provided isbn and title. It returns the deleted book.
-3.updateBook : Updates a book based on the provided author, isbn, numberOfPages, publicationDate, and title. The isbn is required while the other fields are optional. It returns the updated book.
-4.userSignUp : Registers a new user with the provided email, name, and password. All fields are required. It returns a UserSignUpResponse.
-5.login : Authenticates a user based on the provided email and password. It returns an authPayload which includes a JWT for the authenticated user.
+1.addBooks : Adds new books. It takes an array of addBooksInput and returns an array of the added books. <br>
+2.deleteBook : Deletes a book based on the provided isbn and title. It returns the deleted book. <br>
+3.updateBook : Updates a book based on the provided author, isbn, numberOfPages, publicationDate, and title. The isbn is required while the other fields are optional. It returns the updated book. <br>
+4.userSignUp : Registers a new user with the provided email, name, and password. All fields are required. It returns a UserSignUpResponse. <br>
+5.login : Authenticates a user based on the provided email and password. It returns an authPayload which includes a JWT for the authenticated user. <br>
 
 ## License
 
