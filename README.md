@@ -54,6 +54,24 @@ endpoints : <br>
     http://localhost:<port>/graphql <br>
     http://localhost:<port>/public
 
+## Mutations and Queries [endpoints]
+
+### Graphql input parameters
+
+1. addBooksInput : Represents the input for the addBooks mutation. It includes fields for author, isbn, numberOfPages, publicationDate, and title. All fields are required.
+
+### Queries
+
+1.getBooks : Adds new books. It takes an array of addBooksInput and returns an array of the added books.
+
+### Mutations
+
+1.addBooks : Adds new books. It takes an array of addBooksInput and returns an array of the added books.
+2.deleteBook : Deletes a book based on the provided isbn and title. It returns the deleted book.
+3.updateBook : Updates a book based on the provided author, isbn, numberOfPages, publicationDate, and title. The isbn is required while the other fields are optional. It returns the updated book.
+4.userSignUp : Registers a new user with the provided email, name, and password. All fields are required. It returns a UserSignUpResponse.
+5.login : Authenticates a user based on the provided email and password. It returns an authPayload which includes a JWT for the authenticated user.
+
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
