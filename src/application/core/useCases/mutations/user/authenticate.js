@@ -15,7 +15,7 @@ export const authenticate = objectType({
     t.field('login', {
       type: 'authPayload',
       args: {
-        email: nonNull(stringArg()),
+        email: nonNull(stringArg({type: 'EmailAddress'})),
         password: nonNull(stringArg()),
       },
       resolve: async (_root, args, ctx) => {

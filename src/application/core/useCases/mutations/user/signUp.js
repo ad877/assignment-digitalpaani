@@ -1,5 +1,12 @@
 import { extendType, objectType, stringArg, nonNull } from 'nexus';
 import bcrypt from 'bcrypt';
+import { scalarType } from 'nexus';
+import { EmailAddressResolver } from 'graphql-scalars';
+
+export const EmailAddress = scalarType({
+  ...EmailAddressResolver,
+  name: 'EmailAddress',
+});
 
 export const userSignUpResponse = objectType({
   name: 'UserSignUpResponse',
@@ -16,7 +23,7 @@ export const userSignUp = extendType({
       type: 'UserSignUpResponse',
       args: {
         name: nonNull(stringArg()),
-        email: nonNull(stringArg()),
+        email: nonNull(stringArg({type: EmailAddress})),
         password: nonNull(stringArg()),
       },
       resolve: async (_, args, ctx) => {
