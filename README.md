@@ -35,21 +35,23 @@ This project demonstrates how to implement crud operation, user authentication i
 1. Clone the repository
 2. Install NPM packages using "npm install"
 3. Create a `.env` file in the root directory and add the following:
-    PORT_BOOK_MANAGEMENT= <port>
-    DEFAULT_GRAPHQL_PATH="/graphql"   // this endpoint only works if user is authenticated
-    ALLOWED_GRAPHQL_PATH= "/public"   // this endpoint exposes api's which can be public
-    NODE_ENV= "develop"
-    DATABASE_URL = <databaseUri>
-    JWT_SECRET = yoursecret
-4. Start the server using "npm start"
+   
+    PORT_BOOK_MANAGEMENT= port <br>
+    DEFAULT_GRAPHQL_PATH="/graphql"    //this endpoint only works if user is authenticated <br>
+    ALLOWED_GRAPHQL_PATH= "/public"    //this endpoint exposes api's which can be public <br>
+    NODE_ENV= "develop" <br>
+    DATABASE_URL = databaseUri <br>
+    JWT_SECRET = yoursecret <br>
+   
+5. Start the server using "npm start"
 
 
 ## Usage
 
-After starting the server, you can open your below the endpoints which will open up the GraphQL playground in your browser and start making queries and mutations.
+After starting the server, you can open your below the endpoints which will open up the GraphQL playground in your browser and start making queries and mutations.<br>
 
-endpoints : 
-    http://localhost:<port>/graphql
+endpoints : <br>
+    http://localhost:<port>/graphql <br>
     http://localhost:<port>/public
 
 ## License
@@ -58,5 +60,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Arpit Dhunna - arpitdhunna@gmail.com
+Arpit Dhunna - arpitdhunna@gmail.com<br>
 Project Link: https://github.com/ad877/assignment-digitalpaani
