@@ -72,10 +72,6 @@ endpoints : <br>
 4.userSignUp : Registers a new user with the provided email, name, and password. All fields are required. It returns a UserSignUpResponse. <br>
 5.login : Authenticates a user based on the provided email and password. It returns an authPayload which includes a JWT for the authenticated user. <br>
 
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
 ## Contact
 
 Arpit Dhunna - arpitdhunna@gmail.com<br>
