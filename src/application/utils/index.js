@@ -1,1 +1,1 @@
-export * from './crypt.js';
+export * from './generateJWT.js';
