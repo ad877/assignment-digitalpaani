@@ -1,4 +1,4 @@
-# BOOK MANAGEMENT SYSTEM WITH CRUD OPERATIONS USING GRAPQHL WITH Nexus for Digital-Paani Assignment.
+# BOOK MANAGEMENT SYSTEM WITH CRUD OPERATIONS USING GRAPQHL WITH Nexus.
 
 This project demonstrates how to implement crud operation, user authentication in a GraphQL API using Nexus and JSON Web Tokens (JWT).
 
@@ -71,8 +71,3 @@ endpoints : <br>
 3.updateBook : Updates a book based on the provided author, isbn, numberOfPages, publicationDate, and title. The isbn is required while the other fields are optional. It returns the updated book. <br>
 4.userSignUp : Registers a new user with the provided email, name, and password. All fields are required. It returns a UserSignUpResponse. <br>
 5.login : Authenticates a user based on the provided email and password. It returns an authPayload which includes a JWT for the authenticated user. <br>
-
-## Contact
-
-Arpit Dhunna - arpitdhunna@gmail.com<br>
-Project Link: https://github.com/ad877/assignment-digitalpaani
